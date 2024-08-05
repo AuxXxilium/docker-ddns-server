@@ -6,7 +6,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/benjaminbear/docker-ddns-server/dyndns/model"
+	"github.com/AuxXxilium/docker-ddns-server/dyndns/model"
 	"github.com/labstack/echo/v4"
 )
 

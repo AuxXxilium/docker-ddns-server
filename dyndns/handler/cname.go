@@ -5,8 +5,8 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/benjaminbear/docker-ddns-server/dyndns/model"
-	"github.com/benjaminbear/docker-ddns-server/dyndns/nswrapper"
+	"github.com/AuxXxilium/docker-ddns-server/dyndns/model"
+	"github.com/AuxXxilium/docker-ddns-server/dyndns/nswrapper"
 	"github.com/labstack/echo/v4"
 	"gorm.io/gorm"
 )

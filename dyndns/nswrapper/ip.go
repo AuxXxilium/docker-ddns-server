@@ -3,12 +3,13 @@ package nswrapper
 import (
 	"bytes"
 	"errors"
-	"github.com/labstack/gommon/log"
 	"net"
 	"net/http"
 	"strings"
 
-	"github.com/benjaminbear/docker-ddns-server/dyndns/ipparser"
+	"github.com/labstack/gommon/log"
+
+	"github.com/AuxXxilium/docker-ddns-server/dyndns/ipparser"
 )
 
 // GetIPType finds out if the IP is IPv4 or IPv6

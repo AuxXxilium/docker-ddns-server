@@ -10,7 +10,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/benjaminbear/docker-ddns-server/dyndns/model"
+	"github.com/AuxXxilium/docker-ddns-server/dyndns/model"
 	"github.com/go-playground/validator/v10"
 	"github.com/labstack/echo/v4"
 	"github.com/tg123/go-htpasswd"
@@ -119,7 +119,7 @@ func (h *Handler) ParseEnvs() (adminAuth bool, err error) {
 	var ok bool
 	h.Title, ok = os.LookupEnv("DDNS_TITLE")
 	if !ok {
-		h.Title = "TheBBCloud DynDNS"
+		h.Title = "Arc DDNS Service"
 	}
 	allowWildcard, ok := os.LookupEnv("DDNS_ALLOW_WILDCARD")
 	if ok {
