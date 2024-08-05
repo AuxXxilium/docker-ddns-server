@@ -23,7 +23,7 @@ type Host struct {
 // and sets a new LastUpdate date.
 func (h *Host) UpdateHost(updateHost *Host) (updateRecord bool) {
 	updateRecord = false
-	if h.Ip != updateHost.Ip || h.Ttl != updateHost.Ttl || h.Ttl != updateHost.Desc {
+	if h.Ip != updateHost.Ip || h.Ttl != updateHost.Ttl || h.Desc != updateHost.Desc {
 		updateRecord = true
 		h.LastUpdate = time.Now()
 	}
