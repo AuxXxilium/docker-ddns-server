@@ -2,21 +2,24 @@
 name: 'build images'
 
 on:
-  push:
-    tags:
-    - '*'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "version"
+        required: false
+        type: string
 
 jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@main
       - name: Prepare
         id: prep
         run: |
           DOCKER_IMAGE=${{ secrets.DOCKER_USERNAME }}/${GITHUB_REPOSITORY#*/}
-          VERSION=${GITHUB_REF/refs\/tags\//}
+          VERSION=${{ inputs.version }}
           SHORTREF=${GITHUB_SHA::8}
           TAGS="${DOCKER_IMAGE}:${VERSION},${DOCKER_IMAGE}:latest"
       
