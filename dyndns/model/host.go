@@ -16,6 +16,7 @@ type Host struct {
 	LastUpdate time.Time `form:"lastupdate"`
 	UserName   string    `gorm:"unique" form:"username" validate:"min=3"`
 	Password   string    `form:"password" validate:"min=8"`
+	Desc   	   string    `form:"desc"`
 }
 
 // UpdateHost updates all fields of a host entry
@@ -31,6 +32,7 @@ func (h *Host) UpdateHost(updateHost *Host) (updateRecord bool) {
 	h.Ttl = updateHost.Ttl
 	h.UserName = updateHost.UserName
 	h.Password = updateHost.Password
+	h.Desc = updateHost.Desc
 
 	return
 }
