@@ -68,6 +68,12 @@
                 <div class="col-1"></div>
             </div>
             <div class="row mt-3">
+                <div class="col-1"></div>
+                <div class="col-2 text-right">Description:</div>
+                <div class="col-8"><input type="text" class="form-control" placeholder="Enter Description" name="desc" value="{{.host.Desc}}"></div>
+                <div class="col-1"></div>
+            </div>
+            <div class="row mt-3">
                 <div class="col-11 d-flex justify-content-end"><button id="{{.host.ID}}" class="{{.addEdit}} host btn btn-primary">{{if eq .addEdit "edit" }}Edit{{else if eq .addEdit "add" }}Add{{end}} Host Entry</button></div>
                 <div class="col-1"></div>
             </div>

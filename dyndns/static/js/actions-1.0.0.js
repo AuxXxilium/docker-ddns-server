@@ -132,7 +132,7 @@ $("button.copyUrlToClipboard").click(function () {
     let domain = document.getElementById('host-domain_'+id).innerHTML
     let username = document.getElementById('host-username_'+id).innerHTML
     let password = document.getElementById('host-password_'+id).innerHTML
-    let out = location.protocol + '//' +username.trim()+':'+password.trim()+'@'+ domain
+    let out = 'http://' +username.trim()+':'+password.trim()+'@'+ domain
     out +='/update?hostname='+hostname
 
     let dummy = document.createElement("textarea");
