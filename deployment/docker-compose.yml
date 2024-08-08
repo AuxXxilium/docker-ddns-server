@@ -1,17 +1,27 @@
 version: '3'
+
+volumes:
+  bind-data:
+  database:
+
 services:
   ddns:
-    image: bbaerthlein/docker-ddns-server:latest
-    restart: always
+    image: auxxxilium/docker-ddns-server:latest
+    container_name: ddns
+    restart: unless-stopped
     environment:
+      DDNS_TITLE: 'Your DDNS'
       DDNS_ADMIN_LOGIN: 'admin:$$3$$abcdefg'
       DDNS_DOMAINS: 'dyndns.example.com'
       DDNS_PARENT_NS: 'ns.example.com'
-      DDNS_DEFAULT_TTL: '3600'
+      DDNS_DEFAULT_TTL: '600'
+      DDNS_CLEAR_LOG_INTERVAL: '600'
+      DDNS_ALLOW_WILDCARD: 'TRUE'
+      DDNS_LOGOUT_URL: 'https://your-domain.com'
     ports:
+      - "8080:8080"
       - "53:53"
       - "53:53/udp"
-      - "8080:8080"
     volumes:
-       - ./bind-data:/var/cache/bind
-       - ./database:/root/database
+       - bind-data:/var/cache/bind
+       - database:/root/database
